@@ -1,0 +1,40 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h2 class="titulo">Listado de productos</h2>
+                    <div class="d-flex justify-content-between">
+                        <a routerLink="/listar-categorias" class="btn btn-primary m-2">Categorias</a>
+                        <input type="text" class="form-control m-2" style="width: auto; flex-grow: 1;" placeholder="Buscar producto">
+                        <button class="btn btn-success m-2" routerLink="/crear-producto">Nuevo Producto</button>
+                    </div>
+                    <table class="table table-striped mt-3">
+                        <thead>
+                            <tr>
+                                <th scope="col">Producto</th>
+                                <th scope="col">Categoria</th>
+                                <th scope="col">Ubicacion</th>
+                                <th scope="col">Precio</th>
+                                <th scope="col">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Producto 1</td>
+                                <td>Categoria 1</td>
+                                <td>Ubicacion 1</td>
+                                <td>$10.00</td>
+                                <td>
+                                    <i [routerLink]="['/editar-producto']" class="fas fa-edit text-primary"></i>
+                                    <i class="fas fa-trash text-danger"></i>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h5> No hay productos para mostrar </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

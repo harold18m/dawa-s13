@@ -1,0 +1,34 @@
+<div class="apple-style-container">
+    <div class="apple-style-row">
+        <div class="apple-style-card">
+            <div class="apple-style-card-header">
+                {{ titulo | uppercase }}
+            </div>
+            <div class="apple-style-card-body">
+                <form [formGroup]="categoriaForm" (ngSubmit)="agregarCategoria()">
+                    <div class="apple-style-form-group">
+                        <label for="nombre">Nombre de la categoría</label>
+                        <input type="text" id="nombre" formControlName="nombre">
+                        <div *ngIf="categoriaForm.get('nombre')?.hasError('required') && categoriaForm.get('nombre')?.touched" class="apple-style-error">
+                            El nombre es obligatorio.
+                        </div>
+                        <div *ngIf="categoriaForm.get('nombre')?.hasError('minlength') && categoriaForm.get('nombre')?.touched" class="apple-style-error">
+                            El nombre debe tener al menos {{ categoriaForm.get('nombre')?.errors?.['minlength'].requiredLength }} caracteres.
+                        </div>
+                    </div>
+                    <div class="apple-style-form-group">
+                        <label for="descripcion">Descripción</label>
+                        <textarea id="descripcion" formControlName="descripcion"></textarea>
+                        <div *ngIf="categoriaForm.get('descripcion')?.hasError('required') && categoriaForm.get('descripcion')?.touched" class="apple-style-error">
+                            La descripción es obligatoria.
+                        </div>
+                    </div>
+                    <div class="apple-style-form-actions">
+                        <button routerLink="/" class="apple-style-button-secondary">Volver</button>
+                        <button type="submit" [disabled]="categoriaForm.invalid" class="apple-style-button-primary">Aceptar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

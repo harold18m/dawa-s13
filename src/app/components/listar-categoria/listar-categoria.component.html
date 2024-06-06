@@ -1,0 +1,44 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <div class="card">
+        <div class="card-body text-center">
+          <h2 class="titulo">Listado de Categorías</h2>
+          <div>
+            <button class="btn btn-success float-end" routerLink="/crear-categoria">
+            Nueva Categoría
+          </button>
+          </div>
+          <table class="table table-striped mt-3">
+            <thead>
+              <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Categoría 1</td>
+                <td>Descripción de la Categoría 1</td>
+                <td>
+                  <i [routerLink]="['/editar-categoria']" class="fas fa-edit text-primary"></i>
+                  <i class="fas fa-trash text-danger"></i>
+                </td>
+              </tr>
+              <tr>
+                <td>Categoría 2</td>
+                <td>Descripción de la Categoría 2</td>
+                <td>
+                  <i [routerLink]="['/editar-categoria']" class="fas fa-edit text-primary"></i>
+                  <i class="fas fa-trash text-danger"></i>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <h5> No hay categorías para mostrar </h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
